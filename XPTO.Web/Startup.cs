@@ -23,7 +23,7 @@ namespace XPTO.Web
 
             services.AddHttpClient<MessageClient>(c =>
             {
-                c.BaseAddress = new Uri("https://api.chucknorris.io/");
+                c.BaseAddress = new Uri(Configuration.GetSection("MySettings").GetSection("EndPoint.Api.ChuckNorris").Value);
             });
         }
 
